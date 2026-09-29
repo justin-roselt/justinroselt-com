@@ -1,357 +1,189 @@
-<!DOCTYPE html>
-<html lang="en-AU">
+
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Justin Roselt</title>
-  <meta name="description" content="Justin Roselt — husband, father, occasional photographer. Business Development Manager at Exedee, Consultant at Sector Partners, and Owner of The Web Monsters.">
-  <meta name="author" content="Justin Roselt">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f3f2ef" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f1012" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://justinroselt.com/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Justin Roselt">
-  <meta property="og:description" content="Husband, father, occasional photographer. Business Development Manager at Exedee, Consultant at Sector Partners, and Owner of The Web Monsters.">
-  <meta property="og:url" content="https://justinroselt.com/">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f3f2ef;
-      --bg-soft: #e9e8e3;
-      --ink: #15171a;
-      --ink-soft: #4b4f55;
-      --ink-faint: #858a92;
-      --rule: #d5d5cf;
-      --rule-strong: #15171a;
-      --accent: #c2410c;
-      --accent-soft: rgba(194, 65, 12, 0.12);
-      --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue Condensed", Impact, sans-serif;
-      --sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-      --measure: 40rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1012;
-        --bg-soft: #17181b;
-        --ink: #ececea;
-        --ink-soft: #a6a9ae;
-        --ink-faint: #6d7178;
-        --rule: #2a2c30;
-        --rule-strong: #ececea;
-        --accent: #f0743a;
-        --accent-soft: rgba(240, 116, 58, 0.16);
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html {
-      -webkit-text-size-adjust: 100%;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.1875rem);
-      line-height: 1.6;
-      font-feature-settings: "kern", "liga", "calt";
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    ::selection { background: var(--accent-soft); }
-
-    a {
-      color: var(--ink);
-      text-decoration: underline;
-      text-decoration-color: var(--rule);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.22em;
-      transition: text-decoration-color 160ms ease, color 160ms ease;
-    }
-    a:hover { text-decoration-color: var(--accent); color: var(--accent); }
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    .page {
-      width: min(var(--measure), 100% - 3rem);
-      margin-inline: auto;
-      padding-block: clamp(3.5rem, 9vh, 7rem) 4rem;
-    }
-
-    /* ---------- Header ---------- */
-    .hero {
-      margin-bottom: clamp(3.5rem, 8vh, 6rem);
-    }
-
-
-    .hero h1 {
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: clamp(2.75rem, 1rem + 8vw, 5.5rem);
-      line-height: 0.95;
-      white-space: nowrap;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-      margin: 0 0 1.5rem;
-    }
-
-    .hero .tagline {
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.25rem);
-      line-height: 1.15;
-      letter-spacing: 0.005em;
-      color: var(--ink-soft);
-      margin: 0 0 2.5rem;
-      text-wrap: balance;
-    }
-
-    .roles {
-      list-style: none;
-      margin: 0 0 2.5rem;
-      padding: 0;
-      border-top: 2px solid var(--rule-strong);
-    }
-    .roles li {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      column-gap: 1.5rem;
-      align-items: baseline;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .roles .title { font-weight: 600; }
-    .roles .sep { display: none; }
-    .roles a {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      text-decoration: underline;
-      text-decoration-color: var(--accent);
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 0.25em;
-      text-align: right;
-      justify-self: end;
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.4rem;
-    }
-    .roles a::after {
-      content: "\2197";
-      font-size: 0.9em;
-      color: var(--accent);
-      transition: transform 160ms ease;
-    }
-    .roles a:hover { color: var(--accent); }
-    .roles a:hover::after { transform: translate(0.1em, -0.15em); }
-    @media (max-width: 30rem) {
-      .roles li { grid-template-columns: 1fr; row-gap: 0.15rem; }
-      .roles a { text-align: left; justify-self: start; }
-    }
-
-    .contact {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 0.6rem;
-    }
-    .contact a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      border: 1.5px solid var(--rule-strong);
-      padding: 0.55rem 0.95rem;
-      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
-    }
-    .contact a::after {
-      content: "\2197";
-      font-size: 0.9em;
-      color: var(--ink-faint);
-      transition: color 160ms ease;
-    }
-    .contact a[href^="mailto"]::after { content: none; }
-    .contact a:hover {
-      background: var(--ink);
-      color: var(--bg);
-      border-color: var(--ink);
-    }
-    .contact a:hover::after { color: var(--bg); }
-
-    /* ---------- Sections ---------- */
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      margin: 0 0 1.75rem;
-      padding-top: 1rem;
-      border-top: 2px solid var(--rule-strong);
-    }
-
-    .projects {
-      display: grid;
-      gap: 3.25rem;
-    }
-
-    .project h3 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: clamp(2.25rem, 1.75rem + 2vw, 3.25rem);
-      line-height: 0.95;
-      letter-spacing: 0.005em;
-      text-transform: uppercase;
-      margin: 0 0 0.35rem;
-    }
-    .project .sub {
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: 1.35em;
-      line-height: 1.2;
-      color: var(--ink-soft);
-      margin: 0 0 1rem;
-    }
-    .project p { margin: 0 0 1rem; color: var(--ink); }
-    .project p:last-child { margin-bottom: 0; }
-
-    .project .cta {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .project .cta::after {
-      content: "\2192";
-      display: inline-block;
-      transition: transform 160ms ease;
-    }
-    .project .cta:hover::after { transform: translateX(0.3em); }
-
-    /* ---------- Footer ---------- */
-    footer {
-      margin-top: clamp(4rem, 10vh, 7rem);
-      padding-top: 1.25rem;
-      border-top: 2px solid var(--rule-strong);
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
-      color: var(--ink-faint);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5rem 1.5rem;
-    }
-    footer a { color: var(--ink-faint); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition: none !important; }
-      html { scroll-behavior: auto; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>Justin Roselt — Business Development Manager, Exedee</title>
+<meta name="description" content="Justin Roselt, Business Development Manager at Exedee. Book a 30-minute call, take the automation assessment, or save my contact.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;font-family:Inter,system-ui,sans-serif;color:#31373F;font-size:16px;line-height:1.6;text-wrap:pretty;-webkit-font-smoothing:antialiased}
+a{color:#1598DB} a:hover{color:#1180BD}
+:focus-visible{outline:2px solid #1598DB;outline-offset:2px}
+h1,h2,h3{font-family:Poppins,system-ui,sans-serif;font-weight:600;color:#1F3864;margin:0;letter-spacing:-0.01em}
+p{margin:0}
+.lbl{display:block;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1598DB;margin:0 0 14px}
+.b{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;line-height:1;padding:15px 22px;border-radius:6px;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background .15s,border-color .15s;min-height:48px;box-sizing:border-box}
+.b-cyan{background:#1598DB;color:#fff}.b-cyan:hover{background:#1180BD;color:#fff}.b-cyan:active{background:#0E6A9E}
+.b-out{border-color:rgba(255,255,255,.45);color:#fff}.b-out:hover{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
+a.lk{color:#1598DB;text-decoration:none;font-weight:500}a.lk:hover{color:#1180BD;text-decoration:underline;text-underline-offset:3px}
+a.lk.on{color:#6FC3F2}a.lk.on:hover{color:#fff}
+a.nl{color:#31373F;font-size:14px;text-decoration:none;font-weight:500}a.nl:hover{color:#1598DB}
+.pnl{background:#F4F8FC;border-left:3px solid #1598DB;padding:22px 24px}
+.crd{background:#fff;border:1px solid #E2E9F1;border-radius:8px;padding:28px 26px 30px;text-decoration:none;color:inherit;display:block;transition:box-shadow .15s,border-color .15s}
+.crd:hover{border-color:#1598DB;box-shadow:0 8px 24px rgba(12,30,66,.08);color:inherit}
+.mute{color:#5C6B7A}
+em{font-style:italic;color:#6FC3F2}
+.wrap{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px)}
+.hero-g{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;align-items:center}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats>div{padding:28px 26px;border-right:1px solid #E2E9F1}.stats>div:last-child{border-right:0}
+.stages{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0 24px}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start}
+.q{display:grid;grid-template-columns:28px 100px minmax(0,1fr);gap:0 16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #E2E9F1}
+.q:last-child{border-bottom:0}
+.q .n{font-family:Poppins,sans-serif;font-weight:600;font-size:13px;color:#1598DB}
+.q .t{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1F3864}
+.q .d{font-size:15px;line-height:1.5}
+.foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 40px;align-items:baseline}
+.h1{font-size:clamp(34px,4.6vw,52px);line-height:1.1;font-weight:700;color:#fff;max-width:16ch}
+.h2{font-size:clamp(24px,3vw,32px);line-height:1.2}
+.h2b{font-size:clamp(28px,3.6vw,40px);line-height:1.1;font-weight:700}
+.stat{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,40px);line-height:1;color:#1598DB}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:900px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.stages{grid-template-columns:1fr 1fr;gap:20px 20px}.split{grid-template-columns:1fr;gap:28px}.hero-g{grid-template-columns:1fr;gap:28px}.hero-g img{order:-1;width:120px!important;height:120px!important}}
+@media (max-width:600px){.g4,.g3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>div{border-right:0;border-bottom:1px solid #E2E9F1}.stats>div:nth-child(odd){border-right:1px solid #E2E9F1}.stats>div:nth-last-child(-n+2){border-bottom:0}.nl{display:none}.btns{flex-direction:column}.btns .b{justify-content:flex-start}.q{grid-template-columns:24px minmax(0,1fr)}.q .n{grid-row:span 2}.foot{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-  <main class="page">
+<nav style="border-bottom:1px solid #E2E9F1">
+  <div class="wrap" style="display:flex;align-items:center;gap:28px;padding-top:18px;padding-bottom:18px">
+    <a href="#top" style="margin-right:auto;font-family:Poppins,sans-serif;font-weight:700;font-size:18px;color:#1F3864;text-decoration:none">Justin Roselt</a>
+    <a class="nl" href="#exedee">Exedee</a>
+    <a class="nl" href="#assess">Assessment</a>
+    <a class="nl" href="#projects">Projects</a>
+    <a class="b b-cyan" href="https://cal.com/exedee/30min" target="_blank" rel="noopener" style="padding:12px 18px;font-size:14px;min-height:0">Book a 30-minute call</a>
+  </div>
+</nav>
 
-    <header class="hero">
-      <h1>Justin Roselt</h1>
-      <p class="tagline">Husband, father, occasional photographer.</p>
-
-      <ul class="roles" aria-label="Current roles">
-        <li>
-          <span class="title">Business Development Manager</span>
-          <span class="sep" aria-hidden="true">·</span>
-          <a href="https://exedee.com/" rel="me noopener" target="_blank">Exedee</a>
-        </li>
-        <li>
-          <span class="title">Consultant</span>
-          <span class="sep" aria-hidden="true">·</span>
-          <a href="https://sector-partners.com/" rel="me noopener" target="_blank">Sector Partners</a>
-        </li>
-        <li>
-          <span class="title">Owner</span>
-          <span class="sep" aria-hidden="true">·</span>
-          <a href="https://thewebmonsters.com.au/" rel="me noopener" target="_blank">The Web Monsters</a>
-        </li>
-      </ul>
-
-      <ul class="contact" aria-label="Contact">
-        <li><a href="mailto:hello@justinroselt.com">hello@justinroselt.com</a></li>
-        <li><a href="https://www.linkedin.com/in/justinroselt/" rel="me noopener" target="_blank">LinkedIn</a></li>
-        <li><a href="https://profile.tapt.io/profile/0wqQbArVJ0WvZK8klz4m" rel="noopener" target="_blank">Business card</a></li>
-      </ul>
-    </header>
-
-    <section aria-labelledby="projects-heading">
-      <h2 class="section-label" id="projects-heading">Projects</h2>
-
-      <div class="projects">
-
-        <article class="project">
-          <h3>EdNet</h3>
-          <p class="sub">The Education Network</p>
-          <p>EdNet is in its early stages of development and conceptualisation, and is actively connecting with parents to join us on our mission of empowering children with the skills and knowledge they need to succeed in life, focusing on areas often overlooked by traditional schooling.</p>
-          <p><a class="cta" href="https://ednet.au/" rel="noopener" target="_blank">Learn more</a></p>
-        </article>
-
-        <article class="project">
-          <h3>BIZ101</h3>
-          <p class="sub">Build your own business</p>
-          <p>A free business building program for youth aged between 12 and 18. Twelve chapters on how a business actually works, in Australia, with the numbers to go with it.</p>
-          <p><a class="cta" href="https://biz101.ednet.au/" rel="noopener" target="_blank">Learn more and register</a></p>
-        </article>
-
-        <article class="project">
-          <h3>ToApps</h3>
-          <p class="sub">Small apps, made with care</p>
-          <p>A small app studio I am building with one of my children. Each app is focused on making one part of life easier, and every one of them is free, with no subscriptions and no credit card. The first is ToEat, which turns a photo of what is in your fridge into recipes and a meal plan.</p>
-          <p><a class="cta" href="https://toapps.com.au/" rel="noopener" target="_blank">Learn more</a></p>
-        </article>
-
+<header id="top" style="background:#0C1E42;color:#fff">
+  <div class="wrap" style="padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(40px,5vw,64px)">
+    <div class="hero-g">
+      <div>
+        <span class="lbl">Business Development Manager · Exedee · Australia &amp; New Zealand</span>
+        <h1 class="h1">Let's find the process <em>worth automating.</em></h1>
+        <p style="margin-top:24px;font-size:18px;line-height:1.6;color:rgba(255,255,255,.82);max-width:56ch">Business Development Manager at <a class="lk on" href="https://exedee.com">Exedee</a>, Consultant at <a class="lk on" href="https://sector-partners.com/">Sector Partners</a>, and Owner of <a class="lk on" href="https://thewebmonsters.com.au/">The Web Monsters</a>.</p>
+        <div class="btns" style="margin-top:32px">
+          <a class="b b-cyan" href="https://cal.com/exedee/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+          <a class="b b-out" href="#assess">Take the automation assessment</a>
+          <a class="b b-out" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Roselt;Justin%0AFN:Justin Roselt%0AORG:Exedee%0ATITLE:Business Development Manager%0AEMAIL:hello@justinroselt.com%0ATEL;TYPE=CELL:+61425404464%0AURL:https://justinroselt.com%0AEND:VCARD" download="Justin Roselt.vcf">Save my contact</a>
+        </div>
+        <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.6)">A working session to size the opportunity, not a product demo. No obligation.</p>
       </div>
-    </section>
+      <img src="assets/justin.jpg" alt="Justin Roselt" style="width:300px;height:300px;object-fit:cover;border-radius:8px;max-width:100%">
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);font-size:14px;color:rgba(255,255,255,.75)">
+      <span>Cloud-native since <strong style="color:#fff">2007</strong></span>
+      <span><strong style="color:#fff">Melbourne</strong> &amp; <strong style="color:#fff">Auckland</strong></span>
+      <span>Registered <strong style="color:#fff">Peppol Access Point</strong>, AU &amp; NZ</span>
+    </div>
+  </div>
+</header>
 
-    <footer>
-      <span>&copy; <span id="year">2026</span> Justin Roselt</span>
-      <a href="mailto:hello@justinroselt.com">hello@justinroselt.com</a>
-    </footer>
+<section class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(40px,5vw,64px)">
+  <span class="lbl">Is this you?</span>
+  <h2 class="h2">Who I usually talk to</h2>
+  <div class="g4" style="margin-top:32px">
+    <div class="pnl"><h3 style="font-size:16px;line-height:1.35">Finance and accounts payable</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Invoices arriving in every format, matched and approved without re-keying.</p></div>
+    <div class="pnl"><h3 style="font-size:16px;line-height:1.35">Customer service managers</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Inbound mail and email read, sorted and routed before anyone opens it.</p></div>
+    <div class="pnl"><h3 style="font-size:16px;line-height:1.35">Fleet and operations managers</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Field paperwork captured once and pushed to the systems that need it.</p></div>
+    <div class="pnl"><h3 style="font-size:16px;line-height:1.35">Information management</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Digitisation and records that land in the DMS classified and searchable.</p></div>
+  </div>
+</section>
 
-  </main>
+<section id="exedee" style="background:#F4F8FC;border-top:1px solid #E2E9F1;border-bottom:1px solid #E2E9F1"><div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(40px,5vw,64px)">
+  <span class="lbl">What Exedee does</span>
+  <h2 class="h2" style="max-width:26ch">Mail, invoices and records — <span style="color:#1598DB">captured, read, checked and filed automatically.</span></h2>
+  <p class="mute" style="margin-top:20px;max-width:64ch">Exedee is a cloud-native business automation specialist. We take the manual handling out of the highest-volume document flows an organisation runs on and land the information accurately in the systems you already use. We automate around your core systems. We don't replace them.</p>
+  <div class="stats" style="margin-top:28px;background:#fff;border:1px solid #E2E9F1;border-radius:8px;overflow:hidden">
+    <div><p class="stat">0</p><p class="mute" style="margin-top:10px;font-size:13px;line-height:1.5">Core systems replaced. We automate around them.</p></div>
+    <div><p class="stat">99%<span style="font-size:.6em">+</span></p><p class="mute" style="margin-top:10px;font-size:13px;line-height:1.5">Data extraction accuracy across formats and layouts</p></div>
+    <div><p class="stat">95%<span style="font-size:.6em">+</span></p><p class="mute" style="margin-top:10px;font-size:13px;line-height:1.5">Of accounts payable processing automated end to end</p></div>
+    <div><p class="stat"><span style="font-size:.6em">~</span>80%</p><p class="mute" style="margin-top:10px;font-size:13px;line-height:1.5">Reduction in accounts payable processing time</p></div>
+  </div>
+  <p class="mute" style="margin-top:12px;font-size:12px;line-height:1.5;max-width:80ch">Stated outcomes drawn from live Exedee deployments. Actual results vary with each organisation's document mix, systems and starting point.</p>
+</div></section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<section class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(40px,5vw,64px)">
+  <span class="lbl">One platform, four stages</span>
+  <h2 style="font-size:26px;line-height:1.25">The Exedee value chain</h2>
+  <ol class="stages">
+    <li style="border-top:2px solid #1598DB;padding-top:18px"><span class="lbl" style="margin-bottom:8px">Stage 01</span><h3 style="font-size:18px">Capture</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Email, scanned paper, web forms, supplier portals, Peppol. One intake stream.</p></li>
+    <li style="border-top:2px solid #E2E9F1;padding-top:18px"><span class="lbl" style="margin-bottom:8px">Stage 02</span><h3 style="font-size:18px">Extract</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Line-level data read across virtually any format or layout. 99%+ accurate.</p></li>
+    <li style="border-top:2px solid #E2E9F1;padding-top:18px"><span class="lbl" style="margin-bottom:8px">Stage 03</span><h3 style="font-size:18px">Validate</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Your business rules: PO matching, approvals, exceptions, audit trail.</p></li>
+    <li style="border-top:2px solid #E2E9F1;padding-top:18px"><span class="lbl" style="margin-bottom:8px">Stage 04</span><h3 style="font-size:18px">Integrate</h3><p class="mute" style="margin-top:8px;font-size:14px;line-height:1.55">Straight into your finance, ERP, DMS, records and CRM systems. No rekeying.</p></li>
+  </ol>
+</section>
+
+<section style="background:#F4F8FC;border-top:1px solid #E2E9F1;border-bottom:1px solid #E2E9F1"><div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)">
+  <span class="lbl">What we do</span>
+  <h2 style="font-size:26px;line-height:1.25">Six specialties. One platform underneath them.</h2>
+  <div class="g3" style="margin-top:28px">
+    <a class="crd" href="https://exedee.com"><h3 style="font-size:17px;line-height:1.35">Digital mailroom &amp; inbound correspondence</h3><span class="lbl" style="margin:8px 0 12px;letter-spacing:.12em">eCommunications · oMail</span><p class="mute" style="font-size:14px;line-height:1.55">One intake for every channel. Correspondence classified against your rules and put in front of the officer who can act, with the record already filed.</p></a>
+    <a class="crd" href="https://exedee.com"><h3 style="font-size:17px;line-height:1.35">Accounts payable &amp; invoice automation</h3><span class="lbl" style="margin:8px 0 12px;letter-spacing:.12em">eFinance on OASIS</span><p class="mute" style="font-size:14px;line-height:1.55">Invoices captured from every channel, read, coded, matched to purchase orders, routed for approval and posted clean into your finance system.</p></a>
+    <a class="crd" href="https://exedee.com"><h3 style="font-size:17px;line-height:1.35">Intelligent data extraction</h3><span class="lbl" style="margin:8px 0 12px;letter-spacing:.12em">The engine underneath everything</span><p class="mute" style="font-size:14px;line-height:1.55">Unstructured documents become structured, queryable data at 99%+ accuracy. No template per supplier to maintain.</p></a>
+    <a class="crd" href="https://exedee.com"><h3 style="font-size:17px;line-height:1.35">Digitisation &amp; scanning programmes</h3><span class="lbl" style="margin:8px 0 12px;letter-spacing:.12em">NOVA</span><p class="mute" style="font-size:14px;line-height:1.55">Scanning is the easy part. NOVA takes over everything after the scanner: separating, classifying, indexing and registering, with zero manual keying of metadata.</p></a>
+    <a class="crd" href="https://exedee.com"><h3 style="font-size:17px;line-height:1.35">Archiving, records &amp; registration</h3><span class="lbl" style="margin:8px 0 12px;letter-spacing:.12em">eArchiver · Files Online</span><p class="mute" style="font-size:14px;line-height:1.55">Documents registered natively to Content Manager, TRIM, Objective or SharePoint, with classification and retention metadata applied on the way in.</p></a>
+    <a class="crd" href="https://exedee.com"><h3 style="font-size:17px;line-height:1.35">System integration</h3><span class="lbl" style="margin:8px 0 12px;letter-spacing:.12em">eConnect</span><p class="mute" style="font-size:14px;line-height:1.55">A data bridge that lets one system talk to another, so automation value reaches the system of record instead of moving the manual burden one step right.</p></a>
+  </div>
+  <p style="margin-top:20px;font-size:14px"><a class="lk" href="https://exedee.com">Full detail at exedee.com →</a></p>
+</div></section>
+
+<section class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)">
+  <div id="assess" class="split" style="background:#F4F8FC;border-left:3px solid #1598DB;border-radius:0 8px 8px 0;padding:clamp(28px,4vw,48px) clamp(22px,4vw,48px) clamp(30px,4vw,52px)">
+    <div>
+      <span class="lbl">Automation assessment · Five minutes</span>
+      <h2 class="h2b">Could it run itself?</h2>
+      <p class="mute" style="margin-top:18px;font-size:15px;line-height:1.6;max-width:40ch">Five questions about your document flows. At the end you get a plain read on whether the process is worth automating, and roughly how much of it could go.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:28px">
+        <a class="b b-cyan" href="https://www.exedee.digital/" target="_blank" rel="noopener">Take the assessment</a>
+        <a class="lk" href="https://www.exedee.digital/" target="_blank" rel="noopener" style="font-size:14px">exedee.digital</a>
+      </div>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0">
+      <li class="q"><span class="n">01</span><span class="t">Volume</span><span class="d">How many invoices, letters and emails arrive each month?</span></li>
+      <li class="q"><span class="n">02</span><span class="t">Handling</span><span class="d">Where is someone still sorting, keying or checking by hand?</span></li>
+      <li class="q"><span class="n">03</span><span class="t">Systems</span><span class="d">Which finance, ERP or records platforms does it all land in?</span></li>
+      <li class="q"><span class="n">04</span><span class="t">Stakes</span><span class="d">What does a keying error or a missed deadline cost you?</span></li>
+      <li class="q"><span class="n">05</span><span class="t">Readiness</span><span class="d">Could you run a small pilot on live documents?</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="projects" style="background:#F4F8FC;border-top:1px solid #E2E9F1"><div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)">
+  <span class="lbl">Outside work</span>
+  <h2 style="font-size:26px;line-height:1.25">Things I'm building on the side</h2>
+  <div class="g3" style="margin-top:28px;gap:40px">
+    <div><h3 style="font-size:20px">EdNet</h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">The Education Network</p><p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">EdNet is in its early stages of development and conceptualisation, and is actively connecting with parents to join us on our mission of empowering children with the skills and knowledge they need to succeed in life, focusing on areas often overlooked by traditional schooling.</p><p style="margin-top:14px;font-size:14px"><a class="lk" href="https://ednet.au/">Learn more →</a></p></div>
+    <div><h3 style="font-size:20px">BIZ101</h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Build your own business</p><p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A free business building program for youth aged between 12 and 18. Twelve chapters on how a business actually works, in Australia, with the numbers to go with it: one running example, six live calculators, and a 23-step path from "I might" to "I've been paid." No account, no email.</p><p style="margin-top:14px;font-size:14px"><a class="lk" href="https://biz101.ednet.au/">Learn more and register →</a></p></div>
+    <div><h3 style="font-size:20px">ToApps</h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Small apps, made with care</p><p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A small app studio I am building with one of my children. Each app is focused on making one part of life easier, and every one of them is free, with no subscriptions and no credit card. The first is ToEat, which turns a photo of what is in your fridge into recipes and a meal plan.</p><p style="margin-top:14px;font-size:14px"><a class="lk" href="https://toapps.com.au/">Learn more →</a></p></div>
+  </div>
+</div></section>
+
+<footer style="background:#0C1E42;color:#fff">
+  <div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(36px,5vw,64px)">
+    <span class="lbl">Next step</span>
+    <h2 class="h2b" style="color:#fff;max-width:22ch">Bring me one process. I'll tell you whether it's worth automating.</h2>
+    <p style="margin-top:20px;color:rgba(255,255,255,.78);max-width:60ch">Thirty minutes to understand your volumes, your systems and where the manual handling actually sits. Then a straight answer, either way.</p>
+    <div class="btns" style="margin-top:32px">
+      <a class="b b-cyan" href="https://cal.com/exedee/30min" target="_blank" rel="noopener">Book a 30-minute call</a>
+      <a class="b b-out" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Roselt;Justin%0AFN:Justin Roselt%0AORG:Exedee%0ATITLE:Business Development Manager%0AEMAIL:hello@justinroselt.com%0ATEL;TYPE=CELL:+61425404464%0AURL:https://justinroselt.com%0AEND:VCARD" download="Justin Roselt.vcf">Save my contact</a>
+    </div>
+    <div class="foot" style="margin-top:64px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 32px;font-size:14px">
+        <a class="lk on" href="mailto:hello@justinroselt.com">hello@justinroselt.com</a>
+        <a class="lk on" href="tel:+61425404464">+61 425 404 464</a>
+        <a class="lk on" href="https://www.linkedin.com/in/justinroselt/">LinkedIn</a>
+        <a class="lk on" href="https://sector-partners.com/">Sector Partners</a>
+      </div>
+      <span style="font-size:13px;color:rgba(255,255,255,.55)">© 2026 Justin Roselt</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
