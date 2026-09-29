@@ -25,7 +25,7 @@ a.nl{color:#31373F;font-size:14px;text-decoration:none;font-weight:500}a.nl:hove
 .crd{background:#fff;border:1px solid #E2E9F1;border-radius:8px;padding:28px 26px 30px;text-decoration:none;color:inherit;display:block;transition:box-shadow .15s,border-color .15s}
 .crd:hover{border-color:#1598DB;box-shadow:0 8px 24px rgba(12,30,66,.08);color:inherit}
 .mute{color:#5C6B7A}
-em{font-style:italic;color:#6FC3F2}
+em{font-style:normal;color:#5cc0f0}
 .wrap{max-width:1120px;margin:0 auto;padding-left:clamp(20px,5vw,56px);padding-right:clamp(20px,5vw,56px)}
 .hero-g{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;align-items:center}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -45,6 +45,12 @@ em{font-style:italic;color:#6FC3F2}
 .h2b{font-size:clamp(28px,3.6vw,40px);line-height:1.1;font-weight:700}
 .stat{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,40px);line-height:1;color:#1598DB}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero>.wrap{position:relative;z-index:2}
+.hero::before{content:"";position:absolute;inset:-30% -10% auto -10%;height:150%;z-index:0;background:radial-gradient(48% 42% at 16% 10%,rgba(21,152,219,.34),transparent 62%),radial-gradient(42% 46% at 84% 28%,rgba(11,45,114,.85),transparent 66%),radial-gradient(38% 40% at 60% 90%,rgba(6,106,171,.30),transparent 66%);filter:blur(6px);animation:drift 26s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(78% 62% at 50% 34%,#000 20%,transparent 78%);-webkit-mask-image:radial-gradient(78% 62% at 50% 34%,#000 20%,transparent 78%)}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-3%,2%,0) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.hero::before{animation:none}}
 @media (max-width:900px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.stages{grid-template-columns:1fr 1fr;gap:20px 20px}.split{grid-template-columns:1fr;gap:28px}.hero-g{grid-template-columns:1fr;gap:28px}.hero-g img{order:-1;width:120px!important;height:120px!important}}
 @media (max-width:600px){.g4,.g3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>div{border-right:0;border-bottom:1px solid #E2E9F1}.stats>div:nth-child(odd){border-right:1px solid #E2E9F1}.stats>div:nth-last-child(-n+2){border-bottom:0}.nl{display:none}.btns{flex-direction:column}.btns .b{justify-content:flex-start}.q{grid-template-columns:24px minmax(0,1fr)}.q .n{grid-row:span 2}.foot{grid-template-columns:1fr}}
 </style>
@@ -60,7 +66,7 @@ em{font-style:italic;color:#6FC3F2}
   </div>
 </nav>
 
-<header id="top" style="background:#0C1E42;color:#fff">
+<header id="top" class="hero" style="background:#00143f;color:#fff">
   <div class="wrap" style="padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(40px,5vw,64px)">
     <div class="hero-g">
       <div>
