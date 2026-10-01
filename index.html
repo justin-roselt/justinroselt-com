@@ -45,6 +45,18 @@ em{font-style:normal;color:#5cc0f0}
 .h2b{font-size:clamp(28px,3.6vw,40px);line-height:1.1;font-weight:700}
 .stat{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,40px);line-height:1;color:#1598DB}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
+.pcard{display:flex;flex-direction:column;background:#fff;border:1px solid #E2E9F1;border-radius:10px;overflow:hidden;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
+.pcard .plk{color:inherit;text-decoration:none}.pcard .plk:hover{color:#1598DB}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(12,30,66,.12);border-color:#1598DB}
+.pcard:hover .lk{text-decoration:underline;text-underline-offset:3px}
+.pcard .thumb{background:#EEF3F8;border-bottom:1px solid #E2E9F1;padding:10px 10px 0}
+.pcard .bar{display:flex;align-items:center;gap:5px;height:22px;padding:0 4px}
+.pcard .bar span{width:7px;height:7px;border-radius:50%;background:#C9D4E0}
+.pcard .bar em{margin-left:8px;flex:1;font-style:normal;font-size:10.5px;line-height:16px;color:#5C6B7A;background:#fff;border-radius:4px;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcard .shot{position:relative;aspect-ratio:16/10;border-radius:6px 6px 0 0;overflow:hidden}
+.pcard .shot image-slot{position:absolute;inset:0;width:100%;height:100%}
+.pcard .wm{display:none}
+.pcard .pbody{padding:22px 22px 24px}
 .hero{position:relative;overflow:hidden;isolation:isolate}
 .hero>.wrap{position:relative;z-index:2}
 .hero::before{content:"";position:absolute;inset:-30% -10% auto -10%;height:150%;z-index:0;background:radial-gradient(48% 42% at 16% 10%,rgba(21,152,219,.34),transparent 62%),radial-gradient(42% 46% at 84% 28%,rgba(11,45,114,.85),transparent 66%),radial-gradient(38% 40% at 60% 90%,rgba(6,106,171,.30),transparent 66%);filter:blur(6px);animation:drift 26s ease-in-out infinite alternate}
@@ -54,6 +66,7 @@ em{font-style:normal;color:#5cc0f0}
 @media (max-width:900px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.stages{grid-template-columns:1fr 1fr;gap:20px 20px}.split{grid-template-columns:1fr;gap:28px}.hero-g{grid-template-columns:1fr;gap:28px}.hero-g img{order:-1;width:120px!important;height:120px!important}}
 @media (max-width:600px){.g4,.g3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>div{border-right:0;border-bottom:1px solid #E2E9F1}.stats>div:nth-child(odd){border-right:1px solid #E2E9F1}.stats>div:nth-last-child(-n+2){border-bottom:0}.nl{display:none}nav .b{padding:11px 14px!important;font-size:13px!important;white-space:nowrap}nav .b .lg{display:none}.btns{flex-direction:column}.btns .b{justify-content:flex-start}.q{grid-template-columns:24px minmax(0,1fr)}.q .n{grid-row:span 2}.foot{grid-template-columns:1fr}}
 </style>
+
 </head>
 <body>
 <nav style="border-bottom:1px solid #E2E9F1">
@@ -163,10 +176,49 @@ em{font-style:normal;color:#5cc0f0}
 <section id="projects" style="background:#F4F8FC;border-top:1px solid #E2E9F1"><div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)">
   <span class="lbl">Outside work</span>
   <h2 style="font-size:26px;line-height:1.25">Things I'm building on the side</h2>
-  <div class="g3" style="margin-top:28px;gap:40px">
-    <div><h3 style="font-size:20px">EdNet</h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">The Education Network</p><p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">EdNet is in its early stages of development and conceptualisation, and is actively connecting with parents to join us on our mission of empowering children with the skills and knowledge they need to succeed in life, focusing on areas often overlooked by traditional schooling.</p><p style="margin-top:14px;font-size:14px"><a class="lk" href="https://ednet.au/">Learn more →</a></p></div>
-    <div><h3 style="font-size:20px">BIZ101</h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Build your own business</p><p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A free business building program for youth aged between 12 and 18. Twelve chapters on how a business actually works, in Australia, with the numbers to go with it: one running example, six live calculators, and a 23-step path from "I might" to "I've been paid." No account, no email.</p><p style="margin-top:14px;font-size:14px"><a class="lk" href="https://biz101.ednet.au/">Learn more and register →</a></p></div>
-    <div><h3 style="font-size:20px">ToApps</h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Small apps, made with care</p><p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A small app studio I am building with one of my children. Each app is focused on making one part of life easier, and every one of them is free, with no subscriptions and no credit card. The first is ToEat, which turns a photo of what is in your fridge into recipes and a meal plan.</p><p style="margin-top:14px;font-size:14px"><a class="lk" href="https://toapps.com.au/">Learn more →</a></p></div>
+  <div class="g3" style="margin-top:28px;gap:24px">
+    <div class="pcard">
+      <div class="thumb">
+        <div class="bar"><span></span><span></span><span></span><em>ednet.au</em></div>
+        <div class="shot" style="background:linear-gradient(135deg,#E8F3FB,#F4F8FC)">
+          <img src="assets/shot-ednet-v2.png" alt="ednet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <div class="wm" style="color:#fff">EdNet</div>
+        </div>
+      </div>
+      <div class="pbody">
+        <h3 style="font-size:20px"><a class="plk" href="https://ednet.au/">EdNet</a></h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">The Education Network</p>
+        <p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">EdNet is in its early stages of development and conceptualisation, and is actively connecting with parents to join us on our mission of empowering children with the skills and knowledge they need to succeed in life, focusing on areas often overlooked by traditional schooling.</p>
+        <p style="margin-top:14px;font-size:14px"><a class="lk" href="https://ednet.au/">Learn more →</a></p>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="thumb">
+        <div class="bar"><span></span><span></span><span></span><em>biz101.ednet.au</em></div>
+        <div class="shot" style="background:linear-gradient(135deg,#E8F3FB,#F4F8FC)">
+          <img src="assets/shot-biz101-v2.png" alt="biz101" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <div class="wm" style="color:#fff">BIZ101</div>
+        </div>
+      </div>
+      <div class="pbody">
+        <h3 style="font-size:20px"><a class="plk" href="https://biz101.ednet.au/">BIZ101</a></h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Build your own business</p>
+        <p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A free business building program for youth aged between 12 and 18. Twelve chapters on how a business actually works, in Australia, with the numbers to go with it: one running example, six live calculators, and a 23-step path from "I might" to "I've been paid." No account, no email.</p>
+        <p style="margin-top:14px;font-size:14px"><a class="lk" href="https://biz101.ednet.au/">Learn more and register →</a></p>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="thumb">
+        <div class="bar"><span></span><span></span><span></span><em>toapps.com.au</em></div>
+        <div class="shot" style="background:linear-gradient(135deg,#E8F3FB,#F4F8FC)">
+          <img src="assets/shot-toapps-v2.png" alt="toapps" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+          <div class="wm" style="color:#1F3864">ToApps</div>
+        </div>
+      </div>
+      <div class="pbody">
+        <h3 style="font-size:20px"><a class="plk" href="https://toapps.com.au/">ToApps</a></h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Small apps, made with care</p>
+        <p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A small app studio I am building with one of my children. Each app is focused on making one part of life easier, and every one of them is free, with no subscriptions and no credit card. The first is ToEat, which turns a photo of what is in your fridge into recipes and a meal plan.</p>
+        <p style="margin-top:14px;font-size:14px"><a class="lk" href="https://toapps.com.au/">Learn more →</a></p>
+      </div>
+    </div>
   </div>
 </div></section>
 
