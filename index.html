@@ -58,14 +58,36 @@ em{font-style:normal;color:#5cc0f0}
 .pcard .shot image-slot{position:absolute;inset:0;width:100%;height:100%}
 .pcard .wm{display:none}
 .pcard .pbody{padding:22px 22px 24px}
+.ed{background:#FFF8F1;border-top:1px solid #F3E3D2;color:#1E1B16;font-family:Inter,system-ui,sans-serif}
+.ed .ehead{display:block}
+.ed .elbl{display:inline-block;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#C85F00;background:#FFEBD6;border-radius:999px;padding:6px 14px;margin-bottom:18px}
+.ed .eh2{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(32px,4vw,44px);line-height:1.1;letter-spacing:-.02em;color:#1E1B16;margin:0}
+.ed .eh2 span{color:#FF7A00}
+.ed .eintro{margin:0;font-size:17px;line-height:1.6;color:#5A5245;max-width:46ch}
+.ed .egrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:48px}
+.ed .ecard{display:flex;flex-direction:column;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 1px 2px rgba(30,27,22,.04),0 12px 32px -16px rgba(30,27,22,.18);transition:transform .25s,box-shadow .25s}
+.ed .ecard:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(30,27,22,.04),0 24px 48px -20px rgba(255,122,0,.35)}
+.ed .eshot{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#FFEBD6}
+.ed .eshot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
+.ed .ecard:hover .eshot img{transform:scale(1.03)}
+.ed .ehost{position:absolute;left:14px;bottom:14px;font-size:12px;font-weight:600;color:#1E1B16;background:rgba(255,255,255,.92);border-radius:999px;padding:5px 12px;backdrop-filter:blur(6px)}
+.ed .ebody{display:flex;flex-direction:column;flex:1;padding:26px 26px 28px}
+.ed .ebody h3{font-family:Poppins,sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin:0;letter-spacing:-.01em}
+.ed .ebody h3 a{color:#1E1B16;text-decoration:none}.ed .ebody h3 a:hover{color:#FF7A00}
+.ed .esub{margin:4px 0 0;font-size:14px;font-weight:600;color:#FF7A00}
+.ed .edesc{margin:14px 0 0;font-size:14.5px;line-height:1.65;color:#5A5245;flex:1}
+.ed .ebtn{white-space:nowrap;display:inline-flex;align-self:flex-start;align-items:center;gap:8px;margin-top:22px;padding:12px 20px;border-radius:999px;background:#FF7A00;color:#fff;font-weight:600;font-size:14px;text-decoration:none;transition:background .15s,transform .15s}
+.ed .ebtn::after{content:"→"}
+.ed .ebtn:hover{background:#E66D00;color:#fff}
+.ed .ebtn:active{background:#CC6000}
 .hero{position:relative;overflow:hidden;isolation:isolate}
 .hero>.wrap{position:relative;z-index:2}
 .hero::before{content:"";position:absolute;inset:-30% -10% auto -10%;height:150%;z-index:0;background:radial-gradient(48% 42% at 16% 10%,rgba(21,152,219,.34),transparent 62%),radial-gradient(42% 46% at 84% 28%,rgba(11,45,114,.85),transparent 66%),radial-gradient(38% 40% at 60% 90%,rgba(6,106,171,.30),transparent 66%);filter:blur(6px);animation:drift 26s ease-in-out infinite alternate}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(78% 62% at 50% 34%,#000 20%,transparent 78%);-webkit-mask-image:radial-gradient(78% 62% at 50% 34%,#000 20%,transparent 78%)}
 @keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-3%,2%,0) scale(1.08)}}
 @media (prefers-reduced-motion:reduce){.hero::before{animation:none}}
-@media (max-width:900px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.stages{grid-template-columns:1fr 1fr;gap:20px 20px}.split{grid-template-columns:1fr;gap:28px}.hero-g{grid-template-columns:1fr;gap:28px}.hero-g img{order:-1;width:120px!important;height:120px!important}}
-@media (max-width:600px){.g4,.g3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>div{border-right:0;border-bottom:1px solid #E2E9F1}.stats>div:nth-child(odd){border-right:1px solid #E2E9F1}.stats>div:nth-last-child(-n+2){border-bottom:0}.nl{display:none}nav .b{padding:11px 14px!important;font-size:13px!important;white-space:nowrap}nav .b .lg{display:none}.btns{flex-direction:column}.btns .b{justify-content:flex-start}.q{grid-template-columns:24px minmax(0,1fr)}.q .n{grid-row:span 2}.foot{grid-template-columns:1fr}}
+@media (max-width:900px){.ed .ehead{grid-template-columns:1fr}.ed .egrid{grid-template-columns:1fr 1fr}.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}.stages{grid-template-columns:1fr 1fr;gap:20px 20px}.split{grid-template-columns:1fr;gap:28px}.hero-g{grid-template-columns:1fr;gap:28px}.hero-g img{order:-1;width:120px!important;height:120px!important}}
+@media (max-width:600px){.ed .egrid{grid-template-columns:1fr}.g4,.g3{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>div{border-right:0;border-bottom:1px solid #E2E9F1}.stats>div:nth-child(odd){border-right:1px solid #E2E9F1}.stats>div:nth-last-child(-n+2){border-bottom:0}.nl{display:none}nav .b{padding:11px 14px!important;font-size:13px!important;white-space:nowrap}nav .b .lg{display:none}.btns{flex-direction:column}.btns .b{justify-content:flex-start}.q{grid-template-columns:24px minmax(0,1fr)}.q .n{grid-row:span 2}.foot{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -175,54 +197,45 @@ em{font-style:normal;color:#5cc0f0}
   </div>
 </section>
 
-<section id="projects" style="background:#F4F8FC;border-top:1px solid #E2E9F1"><div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(44px,6vw,72px)">
-  <span class="lbl">Outside work</span>
-  <h2 style="font-size:26px;line-height:1.25">Things I'm building on the side</h2>
-  <div class="g3" style="margin-top:28px;gap:24px">
-    <div class="pcard">
-      <div class="thumb">
-        <div class="bar"><span></span><span></span><span></span><em>ednet.au</em></div>
-        <div class="shot" style="background:linear-gradient(135deg,#E8F3FB,#F4F8FC)">
-          <img src="assets/shot-ednet-v2.png" alt="ednet" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-          <div class="wm" style="color:#fff">EdNet</div>
-        </div>
-      </div>
-      <div class="pbody">
-        <h3 style="font-size:20px"><a class="plk" href="https://ednet.au/">EdNet</a></h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">The Education Network</p>
-        <p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">EdNet is in its early stages of development and conceptualisation, and is actively connecting with parents to join us on our mission of empowering children with the skills and knowledge they need to succeed in life, focusing on areas often overlooked by traditional schooling.</p>
-        <p style="margin-top:14px;font-size:14px"><a class="lk" href="https://ednet.au/">Learn more →</a></p>
+<section id="projects" class="ed">
+  <div class="wrap" style="padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px)">
+    <div class="ehead">
+      <div>
+        <span class="elbl">Outside work</span>
+        <h2 class="eh2">Things I'm building <span>on the side</span></h2>
       </div>
     </div>
-    <div class="pcard">
-      <div class="thumb">
-        <div class="bar"><span></span><span></span><span></span><em>biz101.ednet.au</em></div>
-        <div class="shot" style="background:linear-gradient(135deg,#E8F3FB,#F4F8FC)">
-          <img src="assets/shot-biz101-v2.png" alt="biz101" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-          <div class="wm" style="color:#fff">BIZ101</div>
-        </div>
+    <div class="egrid">
+    <article class="ecard">
+      <a class="eshot" href="https://ednet.au/" aria-label="EdNet"><img src="assets/shot-ednet-v2.png" alt="EdNet website"><span class="ehost">ednet.au</span></a>
+      <div class="ebody">
+        <h3><a href="https://ednet.au/">EdNet</a></h3>
+        <p class="esub">The Education Network</p>
+        <p class="edesc">EdNet is in its early stages of development and conceptualisation, and is actively connecting with parents to join us on our mission of empowering children with the skills and knowledge they need to succeed in life, focusing on areas often overlooked by traditional schooling.</p>
+        <a class="ebtn" href="https://ednet.au/">Learn more</a>
       </div>
-      <div class="pbody">
-        <h3 style="font-size:20px"><a class="plk" href="https://biz101.ednet.au/">BIZ101</a></h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Build your own business</p>
-        <p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A free business building program for youth aged between 12 and 18. Twelve chapters on how a business actually works, in Australia, with the numbers to go with it: one running example, six live calculators, and a 23-step path from "I might" to "I've been paid." No account, no email.</p>
-        <p style="margin-top:14px;font-size:14px"><a class="lk" href="https://biz101.ednet.au/">Learn more and register →</a></p>
+    </article>
+    <article class="ecard">
+      <a class="eshot" href="https://biz101.ednet.au/" aria-label="BIZ101"><img src="assets/shot-biz101-v2.png" alt="BIZ101 website"><span class="ehost">biz101.ednet.au</span></a>
+      <div class="ebody">
+        <h3><a href="https://biz101.ednet.au/">BIZ101</a></h3>
+        <p class="esub">Build your own business</p>
+        <p class="edesc">A free business building program for youth aged between 12 and 18. Twelve chapters on how a business actually works, in Australia, with the numbers to go with it: one running example, six live calculators, and a 23-step path from "I might" to "I've been paid." No account, no email.</p>
+        <a class="ebtn" href="https://biz101.ednet.au/">Learn more and register</a>
       </div>
-    </div>
-    <div class="pcard">
-      <div class="thumb">
-        <div class="bar"><span></span><span></span><span></span><em>toapps.com.au</em></div>
-        <div class="shot" style="background:linear-gradient(135deg,#E8F3FB,#F4F8FC)">
-          <img src="assets/shot-toapps-v2.png" alt="toapps" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-          <div class="wm" style="color:#1F3864">ToApps</div>
-        </div>
+    </article>
+    <article class="ecard">
+      <a class="eshot" href="https://toapps.com.au/" aria-label="ToApps"><img src="assets/shot-toapps-v2.png" alt="ToApps website"><span class="ehost">toapps.com.au</span></a>
+      <div class="ebody">
+        <h3><a href="https://toapps.com.au/">ToApps</a></h3>
+        <p class="esub">Small apps, made with care</p>
+        <p class="edesc">A small app studio I am building with one of my children. Each app is focused on making one part of life easier, and every one of them is free, with no subscriptions and no credit card. The first is ToEat, which turns a photo of what is in your fridge into recipes and a meal plan.</p>
+        <a class="ebtn" href="https://toapps.com.au/">Learn more</a>
       </div>
-      <div class="pbody">
-        <h3 style="font-size:20px"><a class="plk" href="https://toapps.com.au/">ToApps</a></h3><p style="margin-top:4px;font-size:14px;font-weight:600;color:#1598DB">Small apps, made with care</p>
-        <p class="mute" style="margin-top:12px;font-size:14px;line-height:1.6">A small app studio I am building with one of my children. Each app is focused on making one part of life easier, and every one of them is free, with no subscriptions and no credit card. The first is ToEat, which turns a photo of what is in your fridge into recipes and a meal plan.</p>
-        <p style="margin-top:14px;font-size:14px"><a class="lk" href="https://toapps.com.au/">Learn more →</a></p>
-      </div>
+    </article>
     </div>
   </div>
-</div></section>
+</section>
 
 <footer style="background:#0C1E42;color:#fff">
   <div class="wrap" style="padding-top:clamp(44px,6vw,72px);padding-bottom:clamp(36px,5vw,64px)">
