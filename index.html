@@ -62,7 +62,7 @@ a{color:var(--blue-dark)}
 .orbs{position:absolute;inset:-30% -10% auto -10%;height:150%;z-index:0;background:radial-gradient(48% 42% at 16% 10%,rgba(21,152,219,.36),transparent 62%),radial-gradient(42% 46% at 84% 28%,rgba(11,45,114,.85),transparent 66%),radial-gradient(38% 40% at 60% 90%,rgba(6,106,171,.32),transparent 66%);filter:blur(6px);animation:drift 26s ease-in-out infinite alternate}
 .gridlines{position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(78% 62% at 50% 34%,#000 20%,transparent 78%);mask-image:radial-gradient(78% 62% at 50% 34%,#000 20%,transparent 78%)}
 @keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-3%,2%,0) scale(1.08)}}
-.hero-in{position:relative;z-index:2;padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(120px,13vw,168px)}
+.hero-in{position:relative;z-index:2;padding-top:clamp(52px,7vw,96px);padding-bottom:clamp(44px,6vw,72px)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,5vw,72px);align-items:center}
 .hero .eyebrow{color:var(--sky);margin-bottom:18px}
 .hero h1{font-size:clamp(36px,5vw,60px);line-height:1.06;font-weight:700;color:#fff;letter-spacing:-.025em;max-width:16ch}
@@ -84,25 +84,6 @@ a{color:var(--blue-dark)}
   .hero-grid{grid-template-columns:1fr}
   .portrait{justify-self:start;width:min(78%,300px);order:-1;margin-bottom:8px}
   .portrait figcaption{left:auto;right:-22px}
-}
-
-/* Results band */
-.results{position:relative;z-index:3;margin-top:clamp(-96px,-8vw,-72px)}
-.results-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 2px 4px rgba(0,20,63,.04),0 32px 64px -32px rgba(0,20,63,.35);padding:clamp(24px,3vw,36px) clamp(20px,3vw,40px)}
-.results-eyebrow{margin:0 0 18px;padding-left:clamp(12px,2.4vw,32px)}
-.results-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-.stat{padding:6px clamp(12px,2.4vw,32px)}
-.stat+.stat{border-left:1px solid var(--line)}
-.stat b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(40px,5.4vw,64px);line-height:1;letter-spacing:-.03em;color:var(--navy-700)}
-.stat b sup{font-size:.45em;color:var(--blue);margin-left:2px;vertical-align:top;position:relative;top:.25em}
-.stat span{display:block;margin-top:10px;font-size:15px;font-weight:500;color:var(--ink);line-height:1.4}
-.results-note{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
-@media (max-width:640px){
-  .results-grid{grid-template-columns:1fr}
-  .stat{padding:16px 4px;display:flex;align-items:baseline;gap:16px}
-  .stat b{min-width:2.6ch}
-  .stat span{margin-top:0}
-  .stat+.stat{border-left:0;border-top:1px solid var(--line)}
 }
 
 /* Strengths */
@@ -262,27 +243,13 @@ a{color:var(--blue-dark)}
     </div>
     <div class="trust">
       <span>Consultant, <strong>Sector Partners</strong></span>
-      <span>Formerly <strong>Service Victoria</strong>, <strong>MYOB</strong>, <strong>TechForce</strong></span>
+      <span>Formerly <strong>Service Victoria</strong>, <strong>MYOB</strong></span>
       <span>Based in <strong>Melbourne, Australia</strong></span>
     </div>
   </div>
 </header>
 
 <main>
-
-<section class="results" aria-label="Typical results">
-  <div class="wrap">
-    <div class="results-card reveal">
-      <span class="eyebrow results-eyebrow">Typical results · up to</span>
-      <div class="results-grid">
-        <div class="stat"><b>95<sup>%</sup></b><span>of manual processes automated</span></div>
-        <div class="stat"><b>80<sup>%</sup></b><span>faster processing</span></div>
-        <div class="stat"><b>99<sup>%</sup></b><span>data accuracy</span></div>
-      </div>
-      <p class="results-note">From guiding councils on responsible AI readiness and continuous improvement across finance, mailroom and records workflows.</p>
-    </div>
-  </div>
-</section>
 
 <section id="strengths" class="section">
   <div class="wrap">
@@ -339,30 +306,33 @@ a{color:var(--blue-dark)}
             <h3>Consultant <span>· Sector Partners</span></h3>
             <span class="when">Jan 2025 – Present <i>Current</i></span>
           </div>
-          <p class="role-sum">Helping public sector organisations deliver measurable outcomes through strategic planning, digital innovation, AI and cybersecurity.</p>
+          <p class="role-sum">Independent adviser to public sector and mid-market organisations, fixing how invoices, mail and records arrive, move and are kept, and the systems in between.</p>
           <ul class="bullets">
-            <li>Advise CFOs, finance managers and information management leads on process performance and continuous improvement across finance, mailroom and records workflows.</li>
-            <li>Guide councils on responsible AI readiness, with typical results of up to 95% of manual processes automated, 80% faster processing and 99% data accuracy.</li>
-          </ul>
-        </div>
-      </li>
-      <li class="role now reveal">
-        <div class="role-card">
-          <div class="role-head">
-            <h3>Business Development Manager <span>· Exedee</span></h3>
-            <span class="when">Oct 2025 – Present <i>Current</i></span>
-          </div>
-          <ul class="bullets">
-            <li>Lead working sessions with CEOs, CFOs and directors to size the automation opportunity and set priorities, automating around core systems instead of replacing them.</li>
-            <li>Work with finance, customer service, fleet and records leaders to remove manual handling from high-volume flows.</li>
-            <li>Open and close commercial opportunities with councils, government suppliers and mid-market organisations across AU &amp; NZ.</li>
+            <li>Run the Information Flow Diagnostic, mapping how information arrives, moves and is kept, and putting a cost and a risk on each step.</li>
+            <li>Build the business case, requirements and procurement approach before any purchase, with any provider relationship disclosed in writing.</li>
+            <li>Assemble the right specialists and hold the plan, risks and suppliers to one timeline, with change management built in.</li>
+            <li>Set KPIs at the start and report benefits at the end, giving executives the evidence that the change held.</li>
+            <li>Advise CEOs, CFOs and information managers on records compliance, accounts payable and eInvoicing, inbound correspondence, technology sourcing and AI governance.</li>
           </ul>
         </div>
       </li>
       <li class="role reveal">
         <div class="role-card">
           <div class="role-head">
-            <h3>Business Development Manager <span>· TechForce</span></h3>
+            <h3>Business Development Manager <span>· Exedee</span></h3>
+            <span class="when">Oct 2025 – Nov 2026</span>
+          </div>
+          <ul class="bullets">
+            <li>Led working sessions with CEOs, CFOs and directors to size the automation opportunity and set priorities, automating around core systems instead of replacing them.</li>
+            <li>Worked with finance, customer service, fleet and records leaders to remove manual handling from high-volume flows.</li>
+            <li>Opened and closed commercial opportunities with councils, government suppliers and mid-market organisations across AU &amp; NZ.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="role reveal">
+        <div class="role-card">
+          <div class="role-head">
+            <h3>Business Development Manager <span>· TechForce Services</span></h3>
             <span class="when">Jun 2024 – Nov 2024</span>
           </div>
           <ul class="bullets">
@@ -530,6 +500,7 @@ a{color:var(--blue-dark)}
         <a href="tel:+61425404464">+61 425 404 464</a>
         <a href="https://www.linkedin.com/in/justinroselt/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://sector-partners.com/" target="_blank" rel="noopener">Sector Partners</a>
+        <a href="https://thewebmonsters.com.au/" target="_blank" rel="noopener">The Web Monsters</a>
       </div>
       <small>© 2026 Justin Roselt · Melbourne, Australia</small>
     </div>
